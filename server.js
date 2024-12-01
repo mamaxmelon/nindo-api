@@ -1,19 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+const cors = require("cors"); // Ensure this is declared only once
 
 const app = express();
 
 // Middleware
-const cors = require("cors");
-
-// Update CORS middleware
 app.use(cors({
-  origin: "https://nindo.jcink.net", // Allow requests from your site
+  origin: "https://nindo.jcink.net", // Allow requests from your Jcink site
   methods: ["POST"],
   allowedHeaders: ["Content-Type"]
 }));
-
+app.use(bodyParser.json());
 
 // Mock data simulating user activity
 const userPostLogs = {
