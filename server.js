@@ -5,8 +5,15 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors({ origin: "https://nindo.jcink.net" })); // Adjust for your site's URL
-app.use(bodyParser.json());
+const cors = require("cors");
+
+// Update CORS middleware
+app.use(cors({
+  origin: "https://nindo.jcink.net", // Allow requests from your site
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+
 
 // Mock data simulating user activity
 const userPostLogs = {
